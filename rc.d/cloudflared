@@ -23,7 +23,7 @@ cloudflared_start() {
 	if [ ! -f /var/run/cloudflared.pid ]
 	then
 		echo -n "Starting cloudflared"
-		/usr/local/bin/cloudflared tunnel &
+		/usr/local/bin/cloudflared tunnel run &
 		echo $! > /var/run/cloudflared.pid
 		echo "."
 	else
